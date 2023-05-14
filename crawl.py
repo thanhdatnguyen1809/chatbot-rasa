@@ -37,6 +37,8 @@ while check:
                 # promotion = product.find(class_ ='p-promotion').text.strip() 
                 summary = product.find(class_='p-summary').text.strip()
                 status=1
+                brand_tag = product.find(class_='p-brand')
+                brand = brand_tag.find('img').get('alt')
                 if (product.find(class_='btn-add')!=None):
                     status =1
                 else:
@@ -50,7 +52,7 @@ while check:
                     promotion = product.find(class_ ='p-promotion').text.strip() 
                 else:
                     promotion ="N/A"
-                row = [website,name,price,unprice,sale,promotion,summary,status,]
+                row = [website,name,price,unprice,sale,promotion,summary,status,brand]
                 
                 data.append(row)
             except AttributeError:
@@ -61,5 +63,5 @@ while check:
        
 
 print(len(data))
-df = pd.DataFrame(data, columns=['Website','Name', 'Price', 'Unprice','Sale','Promotion','Summary','Status'])
+df = pd.DataFrame(data, columns=['Website','Name', 'Price', 'Unprice','Sale','Promotion','Summary','Status','Brand'])
 df.to_csv('crawl.csv', index=False)

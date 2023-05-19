@@ -2,33 +2,6 @@ version: "3.1"
 
 stories:
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
 - story: asking time
   steps:
   - intent: greet
@@ -37,3 +10,61 @@ stories:
   - action: action_hello_world
   - intent: goodbye
   - action: utter_goodbye
+
+- story: buy product 1
+  steps:
+  - intent: ask_available_product
+  - action: action_check_product_availability
+  - intent: ask_to_buy_now
+  - action: utter_asking_how_to_buy
+
+- story: buy product offline
+  steps:
+  - intent: ask_to_buy_now
+  - action: utter_asking_how_to_buy
+  - intent: confirm_to_buy_offline
+  - action: action_able_to_buy_offline
+
+- story: buy product online
+  steps:
+  - intent: ask_to_buy_now
+  - action: utter_asking_how_to_buy
+  - intent: confirm_to_buy_online
+  - action: action_able_to_buy_online
+  # - intent: affirm
+  # - action: utter_ending_thanking
+
+# - story: buy product 2
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: ask_available_product
+#   - action: action_check_product_availability
+#   - intent: ask_to_buy_now
+#   - action: utter_asking_how_to_buy
+#   - intent: confirm_to_buy_online
+#   - action: action_able_to_buy_online
+#   - intent: affirm
+#   - action: utter_ending_thanking
+
+# - story: buy product 3
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: ask_available_product
+#   - action: action_check_product_availability
+#   - intent: confirm_to_buy_offline
+#   - action: action_able_to_buy_offline
+#   - intent: affirm
+#   - action: utter_ending_thanking
+
+# - story: buy product 4
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: ask_available_product
+#   - action: action_check_product_availability
+#   - intent: confirm_to_buy_online
+#   - action: action_able_to_buy_online
+#   - intent: affirm
+#   - action: utter_ending_thanking

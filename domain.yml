@@ -9,9 +9,26 @@ intents:
   - mood_unhappy
   - bot_challenge
   - ask_time
+  - ask_available_product
+  - ask_time_opening
+  - ask_to_buy_now
+  - confirm_to_buy_offline
+  - confirm_to_buy_online
+
+entities:
+  - product_name
+
+slots:
+  p_pronouns:
+      type: text
+      mappings:
+      - type: from_text
 
 actions:
  - action_hello_world
+ - action_check_product_availability
+ - action_able_to_buy_offline
+ - action_able_to_buy_online
 
 responses:
   utter_greet:
@@ -22,7 +39,7 @@ responses:
     image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+  - text: "Điều đó đã giúp bạn được gì chưa?"
 
   utter_happy:
   - text: "Tốt lắm"
@@ -33,7 +50,14 @@ responses:
   utter_iamabot:
   - text: "Tôi là chatbot được phát triển bởi Rasa"
 
+  utter_opening_time:
+  - text: "Thời gian làm việc của cửa hàng là 07h30 - 20h30"
 
+  utter_asking_how_to_buy:
+  - text: "Bạn mua sản phẩm này theo hình thức nào: offline hay online?"
+
+  utter_ending_thanking:
+  - text: "Ok, cảm ơn bạn quan tâm chúng mình"
 
 session_config:
   session_expiration_time: 60

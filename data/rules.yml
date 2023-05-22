@@ -7,6 +7,17 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
+- rule: Say ending words
+  steps:
+  - intent: affirm
+  - action: utter_ending_thanking
+
+- rule: Cheer up the user
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge
@@ -16,3 +27,13 @@ rules:
   steps:
   - intent: ask_time
   - action: action_hello_world
+
+- rule: Check product availability
+  steps:
+  - intent: ask_available_product
+  - action: action_check_product_availability
+
+- rule: Opening business
+  steps:
+  - intent: ask_time_opening
+  - action: utter_opening_time

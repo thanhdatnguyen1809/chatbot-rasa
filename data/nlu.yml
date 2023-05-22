@@ -30,14 +30,12 @@ nlu:
 - intent: affirm
   examples: |
     - đồng ý
-    - chuẩn xác
-    - tất nhiên
-    - dĩ nhiên
-    - nghe có vẻ hay đấy
-    - đúng vậy
-    - quá chuẩn
-    - quá đúng
-    - chuẩn chuẩn
+    - ok
+    - vâng ạ
+    - dạ
+    - vâng shop
+    - ok shop
+    - ok luôn
 
 - intent: deny
   examples: |
@@ -64,16 +62,16 @@ nlu:
 
 - intent: mood_unhappy
   examples: |
-    - tôi đang buồn
+    - {p_pronouns} đang buồn
     - buồn quá
     - mệt quá
-    - tôi đang không vui
+    - {p_pronouns} đang không vui
 
 - intent: bot_challenge
   examples: |
     - bạn là bot à?
     - bạn là ai?
-    - tôi đang nói chuyện với ai vậy?
+    - {p_pronouns} đang nói chuyện với ai vậy?
     - ai vậy?
 
 - intent: ask_time
@@ -96,7 +94,52 @@ nlu:
     - cảm ơn em
     - cảm ơn em nhiều nhé
     - cảm ơn
+  
+- intent: ask_want_to_do
+  examples: |
+    - {product_name} muốn mua [hàng]
+  
+- intent: ask_available_product
+  examples: |
+    - {product_name} còn hàng không?
+    - sản phẩm {product_name} còn không?
+    - {product_name} còn không?
+    - sản phẩm {product_name} còn hàng không?
+    - còn {product_name} không?
+    - còn sản phẩm này không {product_name}?
+    - còn hàng này không {product_name}?
+    - có {product_name} này không?
+    - shop bạn có {product_name} không?
+    - {product_name}
+    - {p_pronouns} muốn mua [laptop dell vostro 5620](product_name)
+    - {p_pronouns} muốn mua [mac book pro m2](product_name)
+    - {p_pronouns} xem thông tin {product_name}
 
+- intent: ask_time_opening
+  examples: |
+    - shop bạn mở cửa từ mấy giờ đến mấy giờ?
+    - giờ mở cửa của shop?
+    - thời gian làm việc của shop?
+
+- intent: ask_to_buy_now
+  examples: |
+    - {p_pronouns} có thể mua bây giờ được không?
+    - {p_pronouns} muốn mua ngay
+    - {p_pronouns} muốn mua sản phẩm đó
+    - {p_pronouns} muốn mua nó
+
+- intent: confirm_to_buy_offline
+  examples: |
+    - {p_pronouns} muốn mua offline
+    - {p_pronouns} muốn đến cửa hàng mua
+    - {p_pronouns} mua trực tiếp
+    - offline
+
+- intent: confirm_to_buy_online
+  examples: |
+    - {p_pronouns} muốn mua online
+    - {p_pronouns} tôi trực tuyến
+    - online
 ## intent: ask_func
 # - bạn có thể làm được những gì
 #     - bạn giúp được gì nào
